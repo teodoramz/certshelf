@@ -1,5 +1,9 @@
 # certshelf
 
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/teodoramz/purrfile/ci.yml?label=ci&style=flat-square)](https://github.com/teodoramz/certshelf/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/v/release/teodoramz/purrfile?style=flat-square)](https://github.com/teodoramz/certshelf/releases/latest)
+<!-- [![GitHub marketplace](https://img.shields.io/badge/marketplace-purrfile-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/certshelf) -->
+
 Clickable certification tiles for your GitHub profile README, from Credly and anything Credly doesn't have.
 
 <p align="center">
