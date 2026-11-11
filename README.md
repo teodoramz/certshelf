@@ -4,12 +4,13 @@ Clickable certification tiles for your GitHub profile README, from Credly and an
 
 <p align="center">
   <img src="docs/example-card.png" width="100%" alt="Certification tiles: two active GIAC badges, a passed ISC2 CC exam and an expired ISC2 badge" />
+  <br><code>style: card</code>
 </p>
 
-<details>
-<summary><code>style: retro</code></summary>
-<p align="center"><img src="docs/example-retro.png" width="100%" alt="The same tiles in the retro style" /></p>
-</details>
+<p align="center">
+  <img src="docs/example-retro.png" width="100%" alt="The same tiles in the retro style" />
+  <br><code>style: retro</code>
+</p>
 
 - Every Credly badge, active or expired, links to its verification page.
 - Add your own entries, with an image, a link and a note.
