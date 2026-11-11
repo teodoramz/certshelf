@@ -1,0 +1,48 @@
+name: certshelf
+description: Clickable certification tiles for your profile README, from Credly and your own entries.
+author: Teodor Amzuloiu
+branding:
+  icon: award
+  color: blue
+
+inputs:
+  credly:
+    description: Your Credly username, from credly.com/users/<username>.
+    default: ""
+  style:
+    description: card (GitHub-like, dark and light) or retro.
+    default: card
+  extra:
+    description: Certifications that aren't on Credly, as a small YAML-like list (see the README).
+    default: ""
+  readme:
+    description: The README to update between <!-- certshelf:start --> and <!-- certshelf:end -->.
+    default: README.md
+  folder:
+    description: Folder for the tile images.
+    default: certshelf
+  commit:
+    description: Commit and push the changes (only when something changed).
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    - name: Draw the certification tiles
+      shell: bash
+      env:
+        PYTHONPATH: ${{ github.action_path }}/src
+        CS_CREDLY: ${{ inputs.credly }}
+        CS_STYLE: ${{ inputs.style }}
+        CS_EXTRA: ${{ inputs.extra }}
+        CS_README: ${{ inputs.readme }}
+        CS_FOLDER: ${{ inputs.folder }}
+        CS_COMMIT: ${{ inputs.commit }}
+      run: >-
+        python3 -m certshelf run
+        --credly "$CS_CREDLY"
+        --style "$CS_STYLE"
+        --extra "$CS_EXTRA"
+        --readme "$CS_README"
+        --folder "$CS_FOLDER"
+        --commit "$CS_COMMIT"

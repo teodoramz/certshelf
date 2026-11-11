@@ -1,0 +1,28 @@
+# Copy into your profile repository as .github/workflows/certshelf.yml.
+name: Certifications
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 06:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  certshelf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: teodoramz/certshelf@v1
+        with:
+          credly: teodor-amzuloiu
+          style: card
+          extra: |
+            - name: CC Exam
+              issuer: ISC2
+              date: 2025-11-18
+              status: Exam passed
+              note: Certification/badge fee not paid
+              image: https://images.credly.com/images/2859c37a-015b-40a6-b570-4bdd7e849b05/image.png
+              link: certs/cc-exam-passed.png
